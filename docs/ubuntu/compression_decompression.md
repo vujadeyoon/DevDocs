@@ -1,4 +1,4 @@
-# Compression
+# Compression and decompression
 
 
 ## Table of contents

@@ -36,14 +36,15 @@
    4. [comparison.md](docs/ubuntu/comparison.md)
    5. [compression_decompression.md](docs/ubuntu/compression_decompression.md)
    6. [delete.md](docs/ubuntu/delete.md)
-   7. [file_systems.md](docs/ubuntu/file_systems.md)
-   8. [git.md](docs/ubuntu/git.md)
-   9. [regexr.md](docs/ubuntu/regexr.md)
-   10. [screen.md](docs/ubuntu/screen.md)
-   11. [sed.md](docs/ubuntu/sed.md)
-   12. [shell.md](docs/ubuntu/shell.md)
-   13. [vim.md](docs/ubuntu/vim.md)
-   14. [vscode.md](docs/ubuntu/vscode.md)
+   7. [download.md](docs/ubuntu/download.md)
+   8. [file_systems.md](docs/ubuntu/file_systems.md)
+   9. [git.md](docs/ubuntu/git.md)
+   10. [regexr.md](docs/ubuntu/regexr.md)
+   11. [screen.md](docs/ubuntu/screen.md)
+   12. [sed.md](docs/ubuntu/sed.md)
+   13. [shell.md](docs/ubuntu/shell.md)
+   14. [vim.md](docs/ubuntu/vim.md)
+   15. [vscode.md](docs/ubuntu/vscode.md)
 
 
 ## 5. Hardware <a name="hardware"></a>

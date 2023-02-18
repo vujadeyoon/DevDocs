@@ -57,3 +57,8 @@ echo -e "\n\n## Remove the given file and open it via vim." | tee -a ~/.bashrc
 echo "function rmvi() {" | tee -a ~/.bashrc
 echo "    rm -f \$1 && vi \$1" | tee -a ~/.bashrc
 echo "}" | tee -a ~/.bashrc
+#
+#
+# Set alias, open.
+echo -e "\n\n## Set alias, open." | tee -a ~/.bashrc
+echo "alias open='xdg-open '" | tee -a ~/.bashrc

@@ -75,6 +75,11 @@ Please refer to the [Docker with NVIDIA Container Toolkit for Deep Learning](htt
 (CONTAINER) $ cat /etc/hostname
 ```
 
+### 4. How to prune docker system
+```bash
+(HOST) $ sudo docker system prune
+```
+
 
 ## 6. Reference <a name="ref"></a>
 1. [Docker with NVIDIA Container Toolkit for Deep Learning](https://vujadeyoon.github.io/blog/2022/docker_with_NVIDIA_container_toolkit_for_deep_learning/)

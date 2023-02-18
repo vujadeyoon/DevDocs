@@ -341,9 +341,9 @@ function img2png() {
 }
 ```
 
-### 13. How to set the alias, open for a file explore <a name="alias_open"></a>
+### 13. How to set the alias, open <a name="alias_open"></a>
 ```bash
-## Open a file explore.
+## Set alias, open.
 alias open='xdg-open '
 ```
 

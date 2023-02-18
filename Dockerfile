@@ -60,6 +60,7 @@ RUN apt-get update &&  \
 # 2. Install the useful ubuntu packages.
 RUN apt-get update &&  \
     apt-get install -y \
+        eog \
         nautilus \
         imagemagick \
         libreoffice \

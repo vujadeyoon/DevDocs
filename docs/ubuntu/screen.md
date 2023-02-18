@@ -19,7 +19,12 @@ $ sudo apt-get install screen
 ```
 
 ## 3. Usage <a name="usage"></a>
-### 1. Recommended configurations for screenrc
+### 1. How to set screenrc
+```bash
+$ vi ~/.screenrc
+```
+
+### 2. Recommended configurations for screenrc
 ```bash
 defscrollback 5000
 termcapinfo xterm* ti@:te@
@@ -32,27 +37,27 @@ bindkey -k k2 select 1
 bindkey -k k3 select 2
 ```
 
-### 2. How to get session list
+### 3. How to get session list
 ```bash
 $ screen -ls
 ```
 
-### 3. How to start a new session with given name
+### 4. How to start a new session with given name
 ```bash
 screen -S ${name_session}
 ```
 
-### 4. How to re-attach the detached session
+### 5. How to re-attach the detached session
 ```bash
 screen -R ${name_session}
 ```
 
-### 5. How to detach a session
+### 6. How to detach a session
 ```bash
 ctrl + a + d
 ```
 
-### 6. How to quit a session
+### 7. How to quit a session
 ```bash
 $ screen -X -S ${name_session} quit
 ```
