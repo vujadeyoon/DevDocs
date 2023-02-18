@@ -30,20 +30,20 @@ $ youtube-dl -f ${format_code} ${url} # Download a video from the YouTube
 
 
 ## 3. Details <a name="details"></a>
-1. [AWS_CLI_v2.md](_Ubuntu/AWS_CLI_v2.md)
-2. [bashrc.md](_Ubuntu/bashrc.md)
-3. [Citrix.md](_Ubuntu/Citrix.md)
-4. [comparison.md](_Ubuntu/comparison.md)
-5. [compression_decompression.md](_Ubuntu/compression_decompression.md)
-6. [delete.md](_Ubuntu/delete.md)
-7. [File_systems.md](_Ubuntu/File_systems.md)
-8. [git.md](_Ubuntu/git.md)
-9. [regexr.md](_Ubuntu/regexr.md)
-10. [screen.md](_Ubuntu/screen.md)
-11. [sed.md](_Ubuntu/sed.md)
-12. [shell.md](_Ubuntu/shell.md)
-13. [Vim.md](_Ubuntu/Vim.md)
-14. [VSCode.md](_Ubuntu/VSCode.md)
+1. [aws_cli_v2.md](ubuntu/aws_cli_v2.md)
+2. [bashrc.md](ubuntu/bashrc.md)
+3. [citrix.md](ubuntu/citrix.md)
+4. [comparison.md](ubuntu/comparison.md)
+5. [compression_decompression.md](ubuntu/compression_decompression.md)
+6. [delete.md](ubuntu/delete.md)
+7. [file_systems.md](ubuntu/file_systems.md)
+8. [git.md](ubuntu/git.md)
+9. [regexr.md](ubuntu/regexr.md)
+10. [screen.md](ubuntu/screen.md)
+11. [sed.md](ubuntu/sed.md)
+12. [shell.md](ubuntu/shell.md)
+13. [vim.md](ubuntu/vim.md)
+14. [vscode.md](ubuntu/vscode.md)
 
 
 ## 4. Reference <a name="ref"></a>
