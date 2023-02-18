@@ -7,8 +7,8 @@
 3. [Python](#python)
 4. [Ubuntu](#ubuntu)
 5. [Hardware](#hardware)
-5. [Reference](#ref)
-6. [Todo](#todo)
+6. [Reference](#ref)
+7. [Todo](#todo)
 
 
 ## 1. Notice <a name="notice"></a>
@@ -31,16 +31,19 @@
 ## 4. Ubuntu <a name="ubuntu"></a>
 1. [Ubuntu.md](docs/Ubuntu.md)
    1. [AWS_CLI_v2.md](docs/_Ubuntu/AWS_CLI_v2.md)
-   2. [bash.md](docs/_Ubuntu/bash.md)
-   3. [bashrc.md](docs/_Ubuntu/bashrc.md)
-   4. [Citrix.md](docs/_Ubuntu/Citrix.md)
-   5. [File_systems.md](docs/_Ubuntu/File_systems.md)
-   6. [Git.md](docs/_Ubuntu/Git.md)
-   7. [regexr.md](docs/_Ubuntu/regexr.md)
-   8. [screen.md](docs/_Ubuntu/screen.md)
-   9. [sed.md](docs/_Ubuntu/sed.md)
-   10. [Vim.md](docs/_Ubuntu/Vim.md)
-   11. [VSCode.md](docs/_Ubuntu/VSCode.md)
+   2. [bashrc.md](docs/_Ubuntu/bashrc.md)
+   3. [Citrix.md](docs/_Ubuntu/Citrix.md)
+   4. [comparison.md](docs/_Ubuntu/comparison.md)
+   5. [compression_decompression.md](docs/_Ubuntu/compression_decompression.md)
+   6. [delete.md](docs/_Ubuntu/delete.md)
+   7. [File_systems.md](docs/_Ubuntu/File_systems.md)
+   8. [git.md](docs/_Ubuntu/git.md)
+   9. [regexr.md](docs/_Ubuntu/regexr.md)
+   10. [screen.md](docs/_Ubuntu/screen.md)
+   11. [sed.md](docs/_Ubuntu/sed.md)
+   12. [shell.md](docs/_Ubuntu/shell.md)
+   13. [Vim.md](docs/_Ubuntu/Vim.md)
+   14. [VSCode.md](docs/_Ubuntu/VSCode.md)
 
 
 ## 5. Hardware <a name="hardware"></a>
@@ -52,4 +55,3 @@
 
 
 ## 7. Todo
-- [ ] Writting screen.md.

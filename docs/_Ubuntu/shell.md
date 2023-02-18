@@ -1,13 +1,13 @@
-# Bash
+# Shell
 
 
 ## Table of contents
 1. [Notice](#notice)
 2. [Usage](#usage)
-   1. [Syntax](#syntax)
-   2. [Path](#path)
-   3. [How to back up all printed logs](#backup_logs)
-   4. [How to fix error related to \r in a bash file](#fix_error_char_r)
+   1. [Basic command](#basic_command)
+   2. [Syntax](#syntax)
+   3. [Path](#path)
+   4. [How to back up all printed logs](#backup_logs)
 3. [Functions](#functions)
    1. [Git initialization](#git_init)
    2. [Display the name of the git branch](#display_git_branch)
@@ -21,16 +21,103 @@
    10. [Remove the given file and open it via vim](#rmvi)
    11. [Pause](#pause)
    12. [img2png](#img2png)
+   13. [How to set the alias, open for a file explore](#alias_open)
 4. [Reference](#ref)
 
 
 ## 1. Notice <a name="notice"></a>
-- A guide for bashrc
+- A guide for shell which is written based on the bash shell.
 - I recommend that you should ignore the commented instructions with an octothorpe, #.
 
 
 ## 2. Usage <a name="usage"></a>
-### 1. Syntax <a name="syntax"></a>
+### 1. Basic command <a name="basic_command"></a>
+1. Program enrollment path for general users
+   ```bash
+   $ /usr/bin/       # for bin that is provided from the distribution
+   $ /usr/local/bin/ # for bin that you installed (or compiled) yourself
+   ```
+2. Environment variable
+   1. How to set the environment variable
+   ```bash
+   # Please note that the environment variable should be in all uppercase.
+   $ export "PATH_CURR=$(pwd)"
+   ```
+   2. How to unset the environment variable
+   ```bash
+   $ unset PATH_CURR
+   ```
+   3. How to check all environment variables
+   ```bash
+   $ env
+   ```
+3. How to fix error related to \r in a bash file
+   ```bash
+   $ dos2unix ${PATH_FILE}
+   ```
+4. How to get file or directory sizes
+   ```bash
+   $ du -sh ${PATH_FILE_DIRECTORY}
+   ```
+5. How to get the number of found items
+   ```bash
+   $ ls ${ls_option} | wc -l
+   ```
+6. How to find a specific string in the contents of a file
+   ```bash
+   # Option:
+   #   -n: Prefix each line of output with the 1-based line number within its input file
+   #   -i: Ignoring case distinctions
+   #   -r: Reading all files under each directory, recursively
+   #
+   #
+   $ grep -nir ${found_string} ${path_file}
+   ```
+7. How to check process
+   ```bash
+   # Option:
+   #   -e: Print all the processes within the system
+   #   -f: See more details
+   #   -u: userlist
+   #
+   #
+   $ ps -ef
+   $ ps -ef | grep ${string}
+   $ ps -u -p ${pid}
+   ```
+8. How to open a file explore
+   ```bash
+   $ open . # please note that you should set alias, open in the ~/.bashrc in advance.
+   ```
+9. How to find a file or directory from the given path
+   ```bash
+   $ find ${PATH} -name ${NAME}
+   ```
+10. How to find and delete directory recursively on Linux system
+    ```bash
+    $ find ${PATH} -type d -name ${NAME_DIRECTORY} -exec rm -rf "{}" \;
+    ```
+11. How to run a command in the background
+    ```bash
+    $ ${command} &
+    ```
+12. whereis <br/>
+    whereis: A command that finds the executable file location, source location, and man page file location of a command.
+    ```bash
+    $ whereis ${command}
+    ```
+13. which <br/>
+    which: A command that finds the location of a specific command.
+    ```bash
+    $ which ${command}
+    ```
+14. How to move the current directory to the previous directory
+    ```bash
+    $ cd -
+    ```
+
+
+### 2. Syntax <a name="syntax"></a>
 1. Shebang for bash
 ```bash
 #!/bin/bash
@@ -46,7 +133,8 @@ if [ -z "${variable}" ]; then
 fi
 ```
 
-### 2. Path <a name="path"></a>
+
+### 3. Path <a name="path"></a>
 1. Default path
 ```bash
 path_curr=$(pwd)                       # /home/usrname/vujadeyoon/DevDocs/docs
@@ -61,7 +149,7 @@ name="${name_extension%.*}"           # img_test
 extension=".${name_extension##*.}"    # .png
 ```
 
-### 3. How to back up all printed logs <a name="backup_logs"></a>
+### 4. How to back up all printed logs <a name="backup_logs"></a>
 1. Option 1: Internal method
 ```bash
 #!/bin/bash
@@ -90,31 +178,6 @@ exec 1>${path_log} 2>&1
 2. Option 2: External method
 ```bash
 $ bash -x ${PATH_BASH}.sh >> ${PATH_LOG}
-```
-
-### 4. How to fix error related to \r in a bash file <a name="fix_error_char_r"></a>
-```bash
-$ dos2unix ${PATH_FILE}
-```
-
-### 5. Program enrollment path for general users <a name="program_enrollment_path"></a>
-```bash
-$ /usr/local/bin/
-```
-
-### 6. How to get file or directory sizes
-```bash
-$ du -sh ${PATH_FILE_DIRECTORY}
-```
-
-### 7. How to find a file or directory from the given path
-```bash
-$ find ${PATH} -name ${NAME}
-```
-
-### 8. How to find and delete directory recursively on Linux system
-```bash
-$ find ${PATH} -type d -name ${NAME_DIRECTORY} -exec rm -rf \;
 ```
 
 
@@ -278,7 +341,16 @@ function img2png() {
 }
 ```
 
+### 13. How to set the alias, open for a file explore <a name="alias_open"></a>
+```bash
+## Open a file explore.
+alias open='xdg-open '
+```
+
 ## 4. Reference <a name="ref"></a>
 1. [How can I fully log all bash scripts actions?](https://serverfault.com/questions/103501/how-can-i-fully-log-all-bash-scripts-actions)
 2. [[Wiki] '/bin' 디렉토리와 '/usr/bin' 디렉토리의 차이는 무엇일까? ('/bin' vs '/usr/bin')](https://wookiist.dev/10)
 3. [How to find and delete directory recursively on Linux or Unix-like system](https://www.cyberciti.biz/faq/how-to-find-and-delete-directory-recursively-on-linux-or-unix-like-system/)
+4. [[Linux] 쉘 스크립트(Shell script) 기초](https://engineer-mole.tistory.com/200)
+5. [open command to open a file in an application](https://unix.stackexchange.com/a/512206)
+6. [Linux ps Command](https://www.baeldung.com/linux/ps-command)
