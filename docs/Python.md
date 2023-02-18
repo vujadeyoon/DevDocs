@@ -16,24 +16,24 @@
 
 ## 2. Video mode <a name="video_mode"></a>
 ### 1. Landscape mode
-- <img src=../asset/img_landscape.png width="30%"/>
+- <img src=../asset/python/fig_landscape.png width="30%"/>
 - FFmpeg encoding option: -vf "transpose=1" (i.e. Landscape mode & 90 degree rotation)
 
 ### 2. Portrait mode
-- <img src=../asset/img_portrait.png height="30%"/>
+- <img src=../asset/python/fig_portrait.png height="30%"/>
 - FFmpeg encoding option: -vf "transpose=0" (i.e. Portrait mode & No rotation)
 
 
 ## 3. Decoding a video using OpenCV-Python <a name="decoding_video_opencv_python"></a>
 ### 1. OpenCV-Python 3
 - The OpenCV-Python 3 does not consider the FFmpeg encoding option (i.e. -vf "transpose=#").
-- Landscape mode: <img src=../asset/img_landscape.png width="30%"/>
-- Portrait mode: <img src=../asset/img_portrait.png height="30%"/>
+- Landscape mode: <img src=../asset/python/fig_landscape.png width="30%"/>
+- Portrait mode: <img src=../asset/python/fig_portrait.png height="30%"/>
 
 ### 2. OpenCV-Python 4+
 - The OpenCV-Python 4+ consider the FFmpeg encoding option (i.e. -vf "transpose=#").
-- Landscape mode: <img src=../asset/img_portrait.png height="30%"/>
-- Portrait mode: <img src=../asset/img_portrait.png height="30%"/>
+- Landscape mode: <img src=../asset/python/fig_portrait.png height="30%"/>
+- Portrait mode: <img src=../asset/python/fig_portrait.png height="30%"/>
 
 
 ## 3. Reference <a name="ref"></a>
