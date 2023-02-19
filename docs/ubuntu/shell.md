@@ -94,28 +94,42 @@
    $ find ${PATH} -name ${NAME}
    ```
 10. How to find and delete directory recursively on Linux system
-    ```bash
-    $ find ${PATH} -type d -name ${NAME_DIRECTORY} -exec rm -rf "{}" \;
-    ```
+   ```bash
+   $ find ${PATH} -type d -name ${NAME_DIRECTORY} -exec rm -rf "{}" \;
+   ```
 11. How to run a command in the background
-    ```bash
-    $ ${command} &
-    ```
+   ```bash
+   $ ${command} &
+   ```
 12. whereis <br/>
-    whereis: A command that finds the executable file location, source location, and man page file location of a command.
-    ```bash
-    $ whereis ${command}
-    ```
+   whereis: A command that finds the executable file location, source location, and man page file location of a command.
+   ```bash
+   $ whereis ${command}
+   ```
 13. which <br/>
-    which: A command that finds the location of a specific command.
-    ```bash
-    $ which ${command}
-    ```
+   which: A command that finds the location of a specific command.
+   ```bash
+   $ which ${command}
+   ```
 14. How to move the current directory to the previous directory
-    ```bash
-    $ cd -
-    ```
-
+   ```bash
+   $ cd -
+   ```
+15. How to get random string
+   ```bash
+   $ random_str_1=$(cat /dev/urandom | tr -dc 'A''C' | fold -w 1 | sed 1q)      # A character from A to C
+   $ random_str_2=$(cat /dev/urandom | tr -dc 'A-Z' | fold -w 6 | sed 1q)       # 6-characters from A to Z
+   $ random_str_3=$(cat /dev/urandom | tr -dc '0-9' | fold -w 3 | sed 1q)       # 3-characters from 0 to 9
+   $ random_str_4=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | sed 1q) # 8-characters of uppercase and lowercase English letters and numbers
+   $ random_str_5=$(($RANDOM% 10))      # Random number from 0 to 9
+   $ random_str_6=$(($RANDOM% 10+1))    # Random number from 1 to 10
+   $ random_str_7=$(($RANDOM% 11+100))  # Random number from 100 to 110
+   $ random_str_8=$(($RANDOM% 101+200)) # Random number from 200 to 300
+   ```
+16. How to get date
+   ```bash
+   $ date '+%y%m%d_%H%M%S' # 230219_000000
+   ```
 
 ### 2. Syntax <a name="syntax"></a>
 1. Shebang for bash
@@ -354,3 +368,6 @@ alias open='xdg-open '
 4. [[Linux] 쉘 스크립트(Shell script) 기초](https://engineer-mole.tistory.com/200)
 5. [open command to open a file in an application](https://unix.stackexchange.com/a/512206)
 6. [Linux ps Command](https://www.baeldung.com/linux/ps-command)
+7. [[Bash Shell Script] 쉘 스크립트 랜덤 문자열, 난수 생성(랜덤 숫자)](https://nirsa.tistory.com/m/122)
+8. [[Linux/Unix] 현재 날짜 찍기, 파일명에 날짜 넣기, 날짜 형식, 날짜 시간 변경 적용, 차이 등 (date)](https://jhnyang.tistory.com/140)
+9. [Linux date 명령어 사용법](https://www.lesstif.com/lpt/linux-date-40436076.html)
