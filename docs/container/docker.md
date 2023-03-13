@@ -17,7 +17,7 @@
 
 
 ## 2. Dockerfile <a name="dockerfile"></a>
-- [Dockerfile](../Dockerfile)
+- [Dockerfile](../../Dockerfile)
 
 
 ## 3. How to build a Dockerfile <a name="build_dockerfile"></a>
@@ -36,7 +36,7 @@
 (HOST_1) $ REPO_TAG=vujade:latest
 (HOST_1) $ VOLUME=~/Desktop/vdisk:/home/dev/vdisk
 (HOST_1) $ PORT=10001:11001
-(HOST_1) $ ENV=PATH_DEV=/home/dev
+(HOST_1) $ ENV=/home/dev
 (HOST_1) $ sudo docker run -it --rm --privileged --runtime nvidia --volume /tmp/.X11-unix:/tmp/.X11-unix:ro --env DISPLAY=unix$DISPLAY --ipc=host --net=host --volume ${VOLUME} --publish ${PORT} --env ${ENV} ${REPO_TAG} /bin/bash
 (HOST_1) $ unset REPO_TAG VOLUME PORT ENV
 ```

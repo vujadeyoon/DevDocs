@@ -23,6 +23,8 @@ ARG GIT_EMAIL="vujadeyoon@gmial.com"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV GIT_MAINTAINER=${GIT_MAINTAINER}
 ENV GIT_EMAIL=${GIT_EMAIL}
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 
 # 0. Fix a bug related to the below messages:
