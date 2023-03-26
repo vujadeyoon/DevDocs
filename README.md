@@ -27,6 +27,9 @@
 ### 2. Podman <a name="podman"></a>
 1. [podman.md](docs/container/podman.md)
 
+### 3. Buildah <a name="buildah"></a>
+1. [buildah.md](docs/container/buildah.md)
+
 
 ## 3. Python <a name="python"></a>
 1. [python.md](docs/python.md)

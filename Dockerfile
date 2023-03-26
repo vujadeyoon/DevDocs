@@ -66,6 +66,9 @@ RUN apt-get update &&  \
         nautilus \
         imagemagick \
         libreoffice \
+        python3-tk \
+        pv \
+        dialog \
         ffmpeg \
         libgtk2.0-dev \
         python3-matplotlib \
@@ -123,8 +126,14 @@ RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/yout
 
 
 # 7. Install development packages.
+# MeshLab
 RUN wget https://github.com/cnr-isti-vclab/meshlab/releases/download/MeshLab-2022.02/MeshLab2022.02-linux.AppImage -O /usr/local/bin/meshlab && \
     chmod +x /usr/local/bin/meshlab
+# Blender
+RUN wget https://mirrors.aliyun.com/blender/release/Blender3.4/blender-3.4.1-linux-x64.tar.xz -O /home/deb_packages/blender-3.4.1-linux-x64.tar.xz && \
+    tar -xvf /home/deb_packages/blender-3.4.1-linux-x64.tar.xz -C /home/deb_packages/ && \
+    ln -s /home/deb_packages/blender-3.4.1-linux-x64/blender /usr/bin/blender && \
+    rm -f /home/deb_packages/blender-3.4.1-linux-x64.tar.xz
 
 
 # 8. Install Korean language.
@@ -177,7 +186,10 @@ RUN pip3 install \
     openpyxl \
     plotly \
     seaborn \
-    shapely
+    shapely \
+    pyqt5 \
+    pyvista \
+    pyvistaqt
 
 
 # 14. Python3 packages for monitoring and debugging

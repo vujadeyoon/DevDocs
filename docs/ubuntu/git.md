@@ -55,6 +55,26 @@ $ sed -i 's/^M//g' ${PATH_FILE}
 $ git commit --amend
 ```
 
+### 8. How to change the url of the git remote repository
+```bash
+$ git remote set-url origin ${url_git_retmote_repo}
+```
+
+### 9. How to revmoe a file from all commit
+```bash
+$ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch ${name_file_to_be_removed}' --prune-empty --tag-name-filter cat -- --all
+```
+
+### 10. How to rebase from the first commit, root
+```bash
+$ git rebase -i --root
+```
+
+### 11. How to change the date and time
+```bash
+$ git commit --amend --no-edit --date "Sun 01 Jan 2023 01:01:01 KST"
+```
+
 
 ## 3. git-lfs <a name="git_lfs"></a>
 ### 1. A file where git-lfs information is written
@@ -127,3 +147,8 @@ $ rm -rf .git/modules/${name_submodule}
 5. [[git lfs untrack] 깃, lfs 추적 해제, 원격 저장소 lfs 저장공간 확보](https://syki66.github.io/blog/2021/04/09/git-lfs-untrack.html)
 6. [Working with submodules](https://github.blog/2016-02-01-working-with-submodules/)
 7. [Git Submodule 삭제 방법](http://snowdeer.github.io/git/2018/08/01/how-to-remove-git-submodule/)
+8. [Github의 이전 commit에 업로드한 보안 코드 삭제 및 수정하기](https://velog.io/@rayleigh_/Github의-이전-commit에-업로드한-보안-코드-삭제-및-수정하기)
+9. [git 특정파일만 모든 커밋에서 제거하기](https://velog.io/@nohsangwoo/git-%ED%8A%B9%EC%A0%95%ED%8C%8C%EC%9D%BC%EB%A7%8C-%EB%AA%A8%EB%93%A0-%EC%BB%A4%EB%B0%8B%EC%97%90%EC%84%9C-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0)
+10. [GitHub, 원격 저장소에서 원하는 파일 이전 기록까지 모두 제거하기](https://melonicedlatte.com/programming/2019/04/20/031700.html)
+11. [git filter-branch 히스토리 필터링](https://velog.io/@sv002/git-filter-branch-히스토리-필터링)
+12. [[Git] 커밋 시간 변경하기](https://velog.io/@be_have98/Git-커밋-시간-변경하기)

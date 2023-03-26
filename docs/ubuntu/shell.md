@@ -8,6 +8,9 @@
    2. [Syntax](#syntax)
    3. [Path](#path)
    4. [How to back up all printed logs](#backup_logs)
+   5. [Difference between set and export](#diff_set_export)
+   6. [How to change owner](#chown)
+   7. [How to remove a PPA](#remove_ppa)
 3. [Functions](#functions)
    1. [Git initialization](#git_init)
    2. [Display the name of the git branch](#display_git_branch)
@@ -140,10 +143,28 @@
 ```bash
 $ find ${PATH} -name ${NAME_WITH_REGEXR}
 ```
-3. How to determine if a variable is empty
+3. How to determine if a variable is existed
 ```bash
-if [ -z "${variable}" ]; then
+if [[ -v "${variable}" ]]; then
+  echo "The variable is existed."
+fi
+```
+4. How to determine if a variable is empty
+```bash
+if [[ -z "${variable}" ]]; then
     echo "The variable is empty."
+fi
+```
+5. How to determine if a directory is existed
+```bash
+if [[ -d "${path_directory}" ]]; then
+    echo "The directory is existed."
+fi
+```
+6. How to determine if a file is existed
+```bash
+if [[ -f "${path_file}" ]]; then
+    echo "The file is existed."
 fi
 ```
 
@@ -192,6 +213,20 @@ exec 1>${path_log} 2>&1
 2. Option 2: External method
 ```bash
 $ bash -x ${PATH_BASH}.sh >> ${PATH_LOG}
+```
+
+### 5. Difference between set and export <a name="diff_set_export"></a>
+The `set` command is used to change settings for the current shell session. On the other hand, the `export` command is used to export variables to the current shell session and all its child processes.
+
+### 6. How to change owner <a name="chown"></a>
+```bash
+$ chown ${name_owner}:${name_group} ${path_dir} # File
+$ chown -R ${name_owner}:${name_group} ${path_dir} # Directory
+```
+
+### 7. How to remove a PPA <a name="remove_ppa"></a>
+```bash
+$ sudo add-apt-repository --remove ppa:${name_ppa}/ppa
 ```
 
 
@@ -371,3 +406,5 @@ alias open='xdg-open '
 7. [[Bash Shell Script] 쉘 스크립트 랜덤 문자열, 난수 생성(랜덤 숫자)](https://nirsa.tistory.com/m/122)
 8. [[Linux/Unix] 현재 날짜 찍기, 파일명에 날짜 넣기, 날짜 형식, 날짜 시간 변경 적용, 차이 등 (date)](https://jhnyang.tistory.com/140)
 9. [Linux date 명령어 사용법](https://www.lesstif.com/lpt/linux-date-40436076.html)
+10. [[LINUX] /dev/null 과 2>&1 완벽 이해하기 (리다이렉션 기호 조합 정리)](https://inpa.tistory.com/entry/리눅스-devnull-리다이렉션-기호-종류#2>1_완벽_이해하기)
+11. [How to Remove or Delete PPA in Ubuntu Linux](https://itsfoss.com/how-to-remove-or-delete-ppas-quick-tip/)

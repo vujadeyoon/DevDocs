@@ -95,3 +95,4 @@ Please refer to the [Docker with NVIDIA Container Toolkit for Deep Learning](htt
 11. [도커 (Docker) - 환경변수 (ENV) 전달하기](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=complusblog&logNo=220975099502)
 12. [Correct way to detach from a container without stopping it](https://stackoverflow.com/questions/25267372/correct-way-to-detach-from-a-container-without-stopping-it)
 13. [How can I get Docker Linux container information from within the container itself?](https://stackoverflow.com/questions/20995351/how-can-i-get-docker-linux-container-information-from-within-the-container-itsel)
+14. [도커란?](https://codecamper.me/blog/26/)
