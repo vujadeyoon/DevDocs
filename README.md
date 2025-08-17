@@ -63,3 +63,77 @@
 
 
 ## 7. Todo
+1. Fix error
+   1. sudo apt-get install --reinstall python3.6-lib2to3:amd64
+   2. sudo dpkg -i --force^Cverwrite /var/cache/apt/archives/python3.6-lib2to3_3.6.15-1+focal3_all.deb
+2. https://blender.stackexchange.com/questions/66265/python-opencv-cv2-in-blender
+3. https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim
+4. vscode - ssh
+5. puuty x11
+6. [How to get the current terminal name?](https://unix.stackexchange.com/questions/77796/how-to-get-the-current-terminal-name): tty
+7. [How to Log Off Another Users ssh Connection by Command Line in Mac OS or Linux](https://osxdaily.com/2019/04/03/log-off-ssh-user/): ps aux | grep sshd && kill -9 ${pid}
+8. :set paste
+9. sudo apt-get install mesa-utils && glxinfo | grep "OpenGL version" # or glxinfo | grep -i version
+10. How to check if the image is exsited.
+```bash
+if podman images | grep "flame2baseavatar1" > /dev/null 2>&1; then
+  echo "Exist."
+else
+  echo "No-exist."
+fi
+```
+11. How to check if the container is exsited.
+```bash
+if podman ps | grep "flame2baseavatar1" >/dev/null 2>&1; then
+  echo "Exist."
+else
+  echo "No-exist."
+fi
+```
+12. How to get status of the container when the container is existed.
+```bash
+if [[ "$(podman inspect -f '{{.State.Status}}' flame2base)" = "running" ]]; then
+  echo "running"
+elif [[ "$(podman inspect -f '{{.State.Status}}' flame2base)" = "exited" ]]; then
+  echo "exited"
+else
+  :
+fi
+```
+13. Useful function
+```bash
+function RunContainer() {
+  local repo_image=${1}
+  local name_container=${2}
+  #
+  #
+  if ! podman images | grep ${repo_image} > /dev/null 2>&1; then
+    # Theie is not hte podman image.
+    if [[ -f "${path_curr}/Containerfile" ]]; then
+      # Theie is the Containerfile.
+      podman build -t ${repo_image}:latest
+      podman run -it --privileged --security-opt=label=disable --hooks-dir=/usr/share/containers/oci/hooks.d/ --volume ./vdisk/:/home/dev/vdisk/ --detach --name ${name_container} ${repo_image}:latest "/bin/bash"  && podman start ${name_container} # --restart=always
+    fi
+  fi
+  #
+  #
+  if podman ps | grep ${repo_image} > /dev/null 2>&1; then
+  # There is the container.
+  if [[ "$(podman inspect -f '{{.State.Status}}' ${name_container})" !- "running" ]]; then
+    # The status of the container is not running.
+    podman start ${name_container}
+  fi
+fi
+#
+#
+if podman ps | grep ${repo_image} > /dev/null 2>&1; then
+  # There is the container.
+  if [[ "$(podman inspect -f '{{.State.Status}}' ${name_container})" !- "running" ]]; then
+    # The status of the container is running.
+    podman exec -w /home/dev/FlameToBaseAvatar/ flame2base /bin/bash ./script/container/_bash_release.sh 3 ./logs/log_$(date +'%y%m%d_%H%M%S').log DEBUG 10 False True man_01 target.jpg 0
+  fi
+fi
+}
+```
+14. Git 업데이트: https://somjang.tistory.com/entry/Git-Ubuntu에서-git을-최신버전으로-업그레이드-하는-방법
+

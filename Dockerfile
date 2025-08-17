@@ -133,7 +133,10 @@ RUN wget https://github.com/cnr-isti-vclab/meshlab/releases/download/MeshLab-202
 RUN wget https://mirrors.aliyun.com/blender/release/Blender3.4/blender-3.4.1-linux-x64.tar.xz -O /home/deb_packages/blender-3.4.1-linux-x64.tar.xz && \
     tar -xvf /home/deb_packages/blender-3.4.1-linux-x64.tar.xz -C /home/deb_packages/ && \
     ln -s /home/deb_packages/blender-3.4.1-linux-x64/blender /usr/bin/blender && \
-    rm -f /home/deb_packages/blender-3.4.1-linux-x64.tar.xz
+    rm -f /home/deb_packages/blender-3.4.1-linux-x64.tar.xz && \
+    /home/deb_packages/blender-3.4.1-linux-x64/3.4/python/bin/python3.10 -m ensurepip && \
+    /home/deb_packages/blender-3.4.1-linux-x64/3.4/python/bin/python3.10 -m pip install --upgrade pip && \
+    /home/deb_packages/blender-3.4.1-linux-x64/3.4/python/bin/python3.10 -m pip install opencv-python
 
 
 # 8. Install Korean language.

@@ -10,7 +10,8 @@
 6. [Video mode](#video_mode)
 7. [Decoding a video using OpenCV-Python](#decoding_video_opencv_python)
 8. [How to fix a bug](#fix_bug)
-9. [Reference](#ref)
+9. [How to release python3 package](#release_pypi)
+10. [Reference](#ref)
 
 
 ## 1. Notice <a name="notice"></a>
@@ -118,10 +119,20 @@ $ pip3 uninstall opencv-python && pip3 install opencv-python-headless
 ```
 
 
-## 8. Reference <a name="ref"></a>
+## 9. How to release python3 package <a name="release_pypi"></a>
+```bash
+$ python3 -m pip install --upgrade build twine
+$ python3 -m build
+$ python3 -m twine upload dist/*
+```
+
+
+## 10. Reference <a name="ref"></a>
 1. [Edit Portrait mode photos on iPhone](https://support.apple.com/en-au/guide/iphone/iph310a9a220/ios)
 2. [Permanently add a directory to PYTHONPATH?](https://stackoverflow.com/a/3402176/18213185)
 3. [Object-Oriented Programming (OOP) in Python 3](https://realpython.com/python3-object-oriented-programming/)
 4. [How to remove duplicate dirs from $PATH?](https://superuser.com/questions/1333562/how-to-remove-duplicate-dirs-from-path/1671778#1671778)
 5. [GuideToPython - 자주 하는 실수](https://python-guide-kr.readthedocs.io/ko/latest/writing/gotchas.html)
 6. ["UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure." when plotting figure with pyplot on Pycharm](https://stackoverflow.com/questions/56656777/userwarning-matplotlib-is-currently-using-agg-which-is-a-non-gui-backend-so)
+7. [Python Package 생성 및 배포하기](https://devocean.sk.com/blog/techBoardDetail.do?ID=163566)
+8. [나만의 파이썬 패키지(PYPI) 만들기 및 등록하고 배포하기](https://teddylee777.github.io/python/pypi/)
